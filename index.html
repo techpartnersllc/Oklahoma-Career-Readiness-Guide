@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oklahoma Career Readiness Resource Guide | Tech Partners LLC</title>
+  <meta name="description" content="A Tech Partners guide to literacy, ESL, GED/HiSET, adult education, and workforce-readiness support across Tulsa, Oklahoma City, and Oklahoma." />
+  <style>
+    :root, [data-theme="light"] {
+      --bg: #f6f6f7;
+      --surface: #ffffff;
+      --surface-2: #f0f0f3;
+      --border: #dddde2;
+      --text: #18181b;
+      --muted: #5c5c66;
+      --faint: #8c8c96;
+      --primary: #bb1e32;
+      --primary-dark: #9d1728;
+      --primary-soft: #f9e6ea;
+      --link: #bb1e32;
+      --shadow: 0 16px 36px rgba(20,20,24,.06);
+      --radius: 18px;
+      --content: 1120px;
+    }
+    [data-theme="dark"] {
+      --bg: #18181b;
+      --surface: #202126;
+      --surface-2: #26272d;
+      --border: #363740;
+      --text: #f3f3f5;
+      --muted: #c4c4cb;
+      --faint: #9a9aa5;
+      --primary: #cf2b41;
+      --primary-dark: #e14559;
+      --primary-soft: #301d21;
+      --link: #f06b7c;
+      --shadow: 0 18px 40px rgba(0,0,0,.22);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .skip-link {
+      position: absolute; left: -9999px; top: 1rem; background: var(--primary); color: #fff;
+      padding: .7rem 1rem; border-radius: 8px;
+    }
+    .skip-link:focus { left: 1rem; z-index: 200; }
+    .container { width: min(var(--content), calc(100% - 2rem)); margin: 0 auto; }
+    .header {
+      position: sticky; top: 0; z-index: 40; backdrop-filter: blur(10px);
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-top {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 0 .7rem;
+    }
+    .brand-logo-light, .brand-logo-dark { height: 56px; width: auto; }
+    .brand-logo-dark { display: none; }
+    [data-theme="dark"] .brand-logo-light { display: none; }
+    [data-theme="dark"] .brand-logo-dark { display: block; }
+    .header-actions {
+      display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; justify-content: flex-end;
+    }
+    .contact-link {
+      display: inline-flex; align-items: center; min-height: 42px; padding: .7rem 1rem; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text); font-weight: 700;
+    }
+    .theme-toggle {
+      width: 42px; height: 42px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); cursor: pointer;
+    }
+    .section-nav {
+      display: flex; gap: 1.05rem; overflow-x: auto; white-space: nowrap; padding: 0 0 .9rem; scrollbar-width: thin;
+    }
+    .section-nav a { color: var(--muted); font-weight: 700; font-size: .95rem; }
+    .section-nav a:hover { color: var(--primary); text-decoration: none; }
+    .hero {
+      padding: 3.2rem 0 2.3rem;
+      background: linear-gradient(180deg, var(--surface), transparent 88%);
+    }
+    .eyebrow {
+      color: var(--primary); font-size: .83rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin: 0 0 1rem; font-size: clamp(2.2rem, 4.2vw, 4.2rem); line-height: 1.05; max-width: 12ch;
+    }
+    .lede {
+      font-size: 1.15rem; color: var(--muted); max-width: 72ch; margin: 0 0 1rem;
+    }
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: .75rem 1.2rem; margin: 1.35rem 0;
+      color: var(--text); font-weight: 700;
+    }
+    .hero-tags span::before {
+      content: "•"; color: var(--primary); margin-right: .45rem;
+    }
+    .hero-note {
+      max-width: 76ch; color: var(--muted);
+    }
+    .update-box {
+      margin-top: 1.5rem; padding: 1rem 1.1rem; border-left: 4px solid var(--primary);
+      background: var(--primary-soft); border-radius: 10px;
+    }
+    .part-label {
+      margin: 2.4rem 0 .4rem; color: var(--faint); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: .82rem;
+    }
+    h2 {
+      margin: 0 0 1rem; font-size: clamp(1.65rem, 2.5vw, 2.3rem); line-height: 1.15;
+      border-bottom: 1px solid var(--border); padding-bottom: .7rem;
+    }
+    h3 { margin: 1.5rem 0 .7rem; font-size: 1.25rem; }
+    h4 { margin: 1rem 0 .45rem; font-size: 1.03rem; }
+    p { margin: 0 0 1rem; }
+    .section { padding: .2rem 0 1.8rem; }
+    .role-card, .resource-card, .callout, .panel {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .role-card, .resource-card, .panel { padding: 1.15rem 1.2rem; }
+    .grid-2, .grid-3 { display: grid; gap: 1rem; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    ul.clean { margin: 0; padding-left: 1.15rem; }
+    ul.clean li { margin: 0 0 .45rem; }
+    .bullet-list { list-style: none; padding: 0; margin: 0; }
+    .bullet-list li { margin: 0 0 .55rem; padding-left: 1rem; position: relative; }
+    .bullet-list li::before {
+      content: "▸"; position: absolute; left: 0; color: var(--primary); font-weight: 700;
+    }
+    .info-table {
+      width: 100%; border-collapse: collapse; margin: .75rem 0 1rem; font-size: .96rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: block;
+    }
+    .info-table thead, .info-table tbody { display: table; width: 100%; table-layout: fixed; }
+    .info-table th, .info-table td {
+      padding: .85rem .9rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top;
+    }
+    .info-table th { background: var(--surface-2); }
+    .info-table tr:last-child td { border-bottom: none; }
+    .resource-stack { display: grid; gap: 1rem; }
+    .resource-card h4 { margin-top: 0; }
+    .resource-card p:last-child { margin-bottom: 0; }
+    .workflow-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .8rem; }
+    .workflow-step {
+      padding: 1rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px;
+    }
+    .workflow-step strong { display: block; margin-bottom: .35rem; color: var(--primary); }
+    .callout {
+      padding: 1.2rem 1.25rem; margin: 1rem 0; background: linear-gradient(180deg, var(--surface), var(--primary-soft));
+    }
+    .footer {
+      border-top: 1px solid var(--border); padding: 2rem 0 3rem; margin-top: 1rem;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; align-items: start; }
+    .footer-icon { width: 64px; height: 64px; border-radius: 16px; margin-bottom: .85rem; }
+    .small { color: var(--muted); font-size: .95rem; }
+    @media (max-width: 980px) {
+      .header-top, .footer-grid, .grid-2, .grid-3, .workflow-grid { grid-template-columns: 1fr; display: grid; }
+      .header-top { gap: .8rem; }
+      .header-actions { justify-content: flex-start; }
+      h1 { max-width: 100%; }
+      .brand-logo-light, .brand-logo-dark { height: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <a href="#top" aria-label="Tech Partners LLC home">
+          <img class="brand-logo-light" src="./assets/logo-horizontal-light.jpg" alt="Tech Partners LLC logo" width="600" height="160" />
+          <img class="brand-logo-dark" src="./assets/logo-horizontal-dark.jpg" alt="Tech Partners LLC logo" width="600" height="160" />
+        </a>
+        <div class="header-actions">
+          <a class="contact-link" href="https://techpartnersllc.com/contact-page/" target="_blank" rel="noopener noreferrer">Contact Us ↗</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">◐</button>
+        </div>
+      </div>
+      <nav class="section-nav" aria-label="Guide sections">
+        <a href="#foundation">Foundation Resources</a>
+        <a href="#adult-literacy">Adult Literacy</a>
+        <a href="#esl">ESL</a>
+        <a href="#ged">GED / HiSET</a>
+        <a href="#workforce">Adult Education & Workforce Readiness</a>
+        <a href="#workflow">Finding Your On-Ramp</a>
+        <a href="#contacts">Key Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="eyebrow">Tech Partners LLC · Community Resource Guide · July 2026</div>
+        <h1>Oklahoma Career Readiness Resource Guide</h1>
+        <p class="lede">A practical index of literacy, ESL, GED/HiSET, adult education, and workforce-readiness resources in Tulsa, Oklahoma City, and across Oklahoma — built for people who may need to solve foundational barriers before pursuing a career pathway.</p>
+        <div class="hero-tags">
+          <span>Adult Literacy</span>
+          <span>ESL Support</span>
+          <span>GED / HiSET</span>
+          <span>Workforce Readiness</span>
+          <span>Community Referrals</span>
+        </div>
+        <p class="hero-note">This guide is designed as a practical resource on the Tech Partners website. Its goal is to make foundational support easier to find, easier to share, and easier to use for individuals and community partners.</p>
+        <div class="update-box"><strong>Overview:</strong> This guide is designed to come before the Oklahoma Career Pathways Guide. It focuses on readiness first — helping people address literacy, language, and educational barriers so they can return to career planning when they are ready.</div>
+      </div>
+    </section>
+
+    <section class="section" id="foundation">
+      <div class="container">
+        <div class="part-label">Part 1</div>
+        <h2>Foundation Resources by Need</h2>
+        <div class="grid-3">
+          <article class="role-card">
+            <h3>Who this guide is for</h3>
+            <p>Adults who want to work, train, or pursue a better future, but may first need support with reading, writing, English language development, high school completion, or basic educational confidence.</p>
+          </article>
+          <article class="role-card">
+            <h3>How community partners can use it</h3>
+            <p>Case managers, churches, schools, nonprofits, and workforce programs can use this guide as a referral tool when someone is not ready to move directly into a career pathway or job opportunity.</p>
+          </article>
+          <article class="role-card">
+            <h3>Why it fits Tech Partners</h3>
+            <p>This extends your workforce-development mission by identifying the first barrier to solve, then helping people reconnect to future pathway planning once readiness improves.</p>
+          </article>
+        </div>
+
+        <h3>Common Readiness Barriers</h3>
+        <ul class="bullet-list">
+          <li><strong>Adult literacy needs</strong> — reading, writing, and comprehension support.</li>
+          <li><strong>English language learning</strong> — ESL classes, conversation support, citizenship prep.</li>
+          <li><strong>High school equivalency</strong> — GED or HiSET preparation and testing pathways.</li>
+          <li><strong>General readiness support</strong> — confidence, digital literacy, adult education navigation, and job-readiness foundations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="adult-literacy">
+      <div class="container">
+        <div class="part-label">Part 2</div>
+        <h2>Adult Literacy Programs</h2>
+
+        <h3>Tulsa</h3>
+        <div class="resource-stack">
+          <article class="resource-card">
+            <h4>Ruth G. Hardman Adult Literacy Service</h4>
+            <p>Tulsa City-County Library’s literacy service provides adult education and English language instruction, including one-on-one learner support in Tulsa County.</p>
+            <p><a href="https://www.tulsalibrary.org/programs-and-services/literacy-outreach-volunteer-services/ruth-g-hardman-adult-literacy-service" target="_blank" rel="noopener noreferrer">Visit program ↗</a></p>
+          </article>
+          <article class="resource-card">
+            <h4>Tulsa Library Trust Literacy Program</h4>
+            <p>The Tulsa Library Trust supports the Ruth G. Hardman Adult Literacy Services program and promotes literacy through adult basic and English language instruction.</p>
+            <p><a href="https://tulsalibrarytrust.org/program/literacy/" target="_blank" rel="noopener noreferrer">Visit program ↗</a></p>
+          </article>
+        </div>
+
+        <h3>Oklahoma City</h3>
+        <div class="resource-stack">
+          <article class="resource-card">
+            <h4>Community Literacy Centers</h4>
+            <p>Community Literacy Centers offers free adult literacy classes in reading, writing, speaking, and communication skills for adults in the Oklahoma City area.</p>
+            <p><a href="https://communityliteracy.com/" target="_blank" rel="noopener noreferrer">Visit program ↗</a></p>
+          </article>
+          <article class="resource-card">
+            <h4>OKC Reads partner network</h4>
+            <p>OKC Reads highlights adult basic literacy services, free classes, and partner organizations supporting adults who need stronger reading and writing foundations.</p>
+            <p><a href="https://okcreads.org/adults/" target="_blank" rel="noopener noreferrer">Visit program ↗</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="esl">
+      <div class="container">
+        <div class="part-label">Part 3</div>
+        <h2>ESL Programs</h2>
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Program</th>
+              <th>Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tulsa</td>
+              <td>Catholic Charities of Eastern Oklahoma</td>
+              <td>ESL classes, citizenship support, and adult education options that can strengthen career and college readiness.</td>
+            </tr>
+            <tr>
+              <td>Tulsa</td>
+              <td>Ruth G. Hardman Adult Literacy Service</td>
+              <td>English language instruction and one-on-one support through Tulsa’s adult literacy infrastructure.</td>
+            </tr>
+            <tr>
+              <td>Oklahoma City</td>
+              <td>Community Literacy Centers</td>
+              <td>Free ESL classes and related adult learning services, with in-person and virtual options.</td>
+            </tr>
+            <tr>
+              <td>Oklahoma City</td>
+              <td>Oklahoma City Community College / Metro Tech</td>
+              <td>Adult education and English language learning offerings that can support broader readiness goals.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="ged">
+      <div class="container">
+        <div class="part-label">Part 4</div>
+        <h2>GED / HiSET Programs</h2>
+        <h3>Where adults can start</h3>
+        <ul class="bullet-list">
+          <li><strong>Tulsa Community College Workforce & Continuing Education</strong> offers GED test preparation and continuing education pathways that can bridge readiness and future occupational training.</li>
+          <li><strong>Community Literacy Centers</strong> includes high school equivalency support among its adult learning class offerings in Oklahoma City.</li>
+          <li><strong>Oklahoma CareerTech Adult Education & Family Literacy</strong> connects adults statewide to free or low-cost local programs for literacy, high school equivalency, and employment preparation.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Statewide note:</strong> Oklahoma CareerTech’s Adult Education and Family Literacy system is a strong statewide starting point because it ties adult education to employment and economic self-sufficiency.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workforce">
+      <div class="container">
+        <div class="part-label">Part 5</div>
+        <h2>Adult Education & Workforce Readiness</h2>
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Tulsa</h3>
+            <ul class="clean">
+              <li>Tulsa Community College Workforce & Continuing Education can serve as a bridge from foundational education into workforce-focused learning.</li>
+              <li>Tulsa Library adult learning and literacy resources provide additional tools for GED preparation, job resources, and continued self-directed learning.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Oklahoma City</h3>
+            <ul class="clean">
+              <li>Community Literacy Centers provides adult education, ESL, citizenship, and high school equivalency support for adults 18 and up.</li>
+              <li>Metro Technology Centers and Oklahoma City Community College can help learners move from adult education into more specific training and readiness options.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="part-label">Part 6</div>
+        <h2>Finding Your On-Ramp</h2>
+        <p>Wherever someone is starting — rebuilding confidence, learning English, finishing high school equivalency, or preparing for work — there is a sequence that can move them toward opportunity.</p>
+
+        <div class="workflow-grid">
+          <div class="workflow-step"><strong>1. Intake</strong> Identify goals, urgency, and the most immediate barrier.</div>
+          <div class="workflow-step"><strong>2. Readiness Assessment</strong> Determine whether the person is ready now or needs support first.</div>
+          <div class="workflow-step"><strong>3. Referral Path</strong> Connect them to literacy, ESL, GED, or adult education resources.</div>
+          <div class="workflow-step"><strong>4. Reassessment</strong> Check progress and revisit options after foundational gains.</div>
+          <div class="workflow-step"><strong>5. Career Pathways</strong> Return the person to pathway selection, training, and employer connection.</div>
+        </div>
+
+        <h3>How to use this guide</h3>
+        <p>This guide can stand on its own as a Tech Partners public resource today, while also supporting future conversations about a stronger community navigation model that helps more adults move from “not ready yet” to “ready now.”</p>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container">
+        <div class="part-label">Part 7</div>
+        <h2>Key Contacts & How to Start</h2>
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th>Starting Point</th>
+              <th>What It Helps With</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ruth G. Hardman Adult Literacy Service</td>
+              <td>Adult literacy and English language instruction in Tulsa County.</td>
+              <td><a href="https://www.tulsalibrary.org/programs-and-services/literacy-outreach-volunteer-services/ruth-g-hardman-adult-literacy-service" target="_blank" rel="noopener noreferrer">tulsalibrary.org ↗</a></td>
+            </tr>
+            <tr>
+              <td>Community Literacy Centers</td>
+              <td>Adult basic education, ESL, citizenship, and high school equivalency support in OKC.</td>
+              <td><a href="https://communityliteracy.com/" target="_blank" rel="noopener noreferrer">communityliteracy.com ↗</a></td>
+            </tr>
+            <tr>
+              <td>Oklahoma CareerTech AEFL</td>
+              <td>Statewide provider network for adult education, literacy, and employment preparation.</td>
+              <td><a href="https://oklahoma.gov/careertech/educators/adult-education-and-family-literacy.html" target="_blank" rel="noopener noreferrer">oklahoma.gov ↗</a></td>
+            </tr>
+            <tr>
+              <td>Oklahoma Career Pathways Guide</td>
+              <td>Next-step resource for people who are ready to move into career and training pathway selection.</td>
+              <td><a href="https://techpartnersllc.github.io/Oklahoma-Career-Pathways-Guide/" target="_blank" rel="noopener noreferrer">Open guide ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>About Tech Partners LLC</h3>
+        <p>Tech Partners LLC is a Tulsa-based IT recruiting, staffing, and workforce development firm. The Oklahoma Career Pathways Guide makes this readiness-first companion a natural Volume 1 entry point.</p>
+        <p><a href="https://techpartnersllc.com/contact-page/" target="_blank" rel="noopener noreferrer">Get in Touch ↗</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-icon" src="./assets/icon-300x300-crimson.jpg" alt="Tech Partners icon" width="300" height="300" />
+        <p class="small">Guide published by Tech Partners LLC as a practical community resource for foundational education and career readiness support.</p>
+      </div>
+      <div>
+        <p class="small">Companion resource: <a href="https://techpartnersllc.github.io/Oklahoma-Career-Pathways-Guide/" target="_blank" rel="noopener noreferrer">Oklahoma Career Pathways Guide ↗</a></p>
+        <p class="small">Main site: <a href="https://techpartnersllc.com/" target="_blank" rel="noopener noreferrer">techpartnersllc.com ↗</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const btn = document.querySelector('[data-theme-toggle]');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      function paint(){ btn.textContent = theme === 'dark' ? '☀' : '◐'; }
+      paint();
+      btn.addEventListener('click', function(){
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        paint();
+      });
+    })();
+  </script>
+</body>
+</html>
